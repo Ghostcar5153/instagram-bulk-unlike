@@ -4,7 +4,7 @@
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 1. **Clone the repo**
 
@@ -19,7 +19,7 @@
 3. **Open your Instagram Likes**
 
    * Go to: `https://www.instagram.com/your_activity/interactions/likes/`
-   * Click the extension icon ▶️, then ⚙️ to configure settings
+   * Click the extension icon 🧩, then ⚙️ to configure settings
 
 ---
 
