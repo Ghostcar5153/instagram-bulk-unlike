@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Bulk Unlike",
+  "version": "1.0",
+  "description": "Automatically unlike Instagram posts in bulk with a modern interface",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://www.instagram.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.instagram.com/your_activity/interactions/likes*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Instagram Bulk Unlike"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
