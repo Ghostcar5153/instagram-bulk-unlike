@@ -64,7 +64,7 @@ After installing, click the ⚙️ icon to open settings:
 
 By default, the extension:
 
-1. Selects a batch of posts (based on the configured **Items / cycle**, default and recommended by me: 100).
+1. Selects a batch of posts (based on the configured **Items / cycle**, default and recommended by me: 50).
 2. Unlikes each post with the specified delays between actions.
 3. Reloads the Likes page after processing the batch.
 4. Waits for the configured **Resume delay** (default: `5000 ms`).
