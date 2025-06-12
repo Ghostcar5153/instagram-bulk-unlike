@@ -11,52 +11,55 @@
    ```bash
    git clone https://github.com/Ghostcar5153/instagram-bulk-unlike.git
    ```
+
 2. **Load as an unpacked extension**
 
-   * Open Chrome or Brave and navigate to `chrome://extensions` or `brave://extensions`
-   * Enable **Developer mode** (toggle in the top‑right)
+   * Go to `chrome://extensions` or `brave://extensions`
+   * Enable **Developer mode** (top-right switch)
    * Click **Load unpacked** and select the `instagram-bulk-unlike` folder
+
 3. **Open your Instagram Likes**
 
-   * Go to: `https://www.instagram.com/your_activity/interactions/likes/`
-   * Click the extension icon 🧩, then ⚙️ to configure settings
+   * Navigate to: `https://www.instagram.com/your_activity/interactions/likes/`
+   * Click the extension icon 🧩, then hit ⚙️ to configure and start
 
 ---
 
 ## 🎯 Features
 
-* **Bulk Unlike**: Unlike hundreds of posts automatically.
-* **Configurable Delays**: Adjust delays between clicks to avoid rate‑limiting (The default is what worked for me).
-* **Batch Size**: Control how many posts to process per cycle.
-* **Presets**: Choose from **Slow**, **Balanced**, or **Fast** modes.
-* **Safety Options**: Respect Instagram rate limits or auto retry on errors.
-* **Import/Export**: Backup and restore your settings as JSON.
+* **Bulk Unlike**: Automatically removes likes from hundreds of posts
+* **Real-time Dashboard**: Live tracking of cycles, actions, and processing status
+* **Presets**: Choose between **Conservative**, **Balanced**, or **Aggressive** configurations
+* **Custom Delays**: Full control over timing for each stage (clicks, reloads, retries)
+* **Rate Limiting & Retry Logic**: Avoids bans and retries intelligently
+* **Settings Modal**: Modern, responsive modal for configuration
+* **Import/Export**: Easily back up and restore your settings as JSON
+* **New UI**: Completely redesigned, clean and responsive layout with feedback and status indicators
 
 ---
 
-## 🖥️ Supported Browsers
+## 💽 Supported Browsers
 
-* Chrome (v**90**+)
-* Brave (Chromium‑based)
-* Edge (Chromium‑based)
+* Chrome (v90+)
+* Brave
+* Edge (Chromium)
 * Opera
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Configuration Settings
 
-After installing, click the ⚙️ icon to open settings:
-
-| Setting            | Description                                 | Default |
-| ------------------ | ------------------------------------------- | ------- |
-| **Items / cycle**  | Maximum posts to unlike per run             | `50`    |
-| **Between clicks** | Delay between individual unlike clicks (ms) | `100`   |
-| **After select**   | Delay after selecting a post to unlike (ms) | `500`   |
-| **After unlike**   | Delay after each unlike action (ms)         | `1000`  |
-| **Resume delay**   | Wait time before next cycle (ms)            | `5000`  |
-| **Rate limit**     | Respect Instagram’s rate limit rules        | ✔️      |
-| **Auto‑retry**     | Retry on script errors                      | ✔️      |
-| **Max retries**    | Number of retry attempts on failure         | `3`     |
+| Setting            | Description                                | Default |
+| ------------------ | ------------------------------------------ | ------- |
+| **Items / cycle**  | Posts unliked per batch                    | `50`    |
+| **Between clicks** | Delay between unlike clicks (ms)           | `100`   |
+| **After select**   | Wait after selecting a post (ms)           | `500`   |
+| **After unlike**   | Wait after unliking a post (ms)            | `1000`  |
+| **Reload wait**    | Wait after reloading Likes page (ms)       | `1000`  |
+| **Resume delay**   | Wait before starting a new cycle (ms)      | `5000`  |
+| **Rate limit**     | Enables safety for Instagram limits        | ✔️      |
+| **Auto-retry**     | Automatically retries failed actions       | ✔️      |
+| **Max retries**    | Number of retry attempts per failed action | `3`     |
 
 ---
 
@@ -72,34 +75,44 @@ By default, the extension:
 
 ---
 
-## 📸 Usage
+## 📸 Using It
 
-1. Navigate to your **Instagram Likes** page.
-2. Click the extension icon in your toolbar.
-3. In the popup, press **Start** ▶️.
-4. Monitor **Cycles**, **Processed**, and **Current Action** in real time.
-5. Press **Stop** ⏸️ to halt at any time.
+1. Go to your **Instagram Likes** page
+2. Open the extension 🧩 and click **Start**
+3. View the live status including:
+
+   * **Current Action**
+   * **Cycle Count**
+   * **Processed Posts**
+4. Click **Stop** at any time
+5. Use ⚙️ to tweak presets or delays
+6. Use ⬆️ Export and ⬇️ Import buttons to save/share config
 
 ---
 
-## 🗺️ Roadmap
+## 🛠️ Known Bugs / Notes
 
-* [ ] **Chrome Web Store** publishing
-* [ ] **Edge/Opera** store listings
-* [ ] **Dark/Light** theme toggle in popup
-* [ ] **Progress bar** & estimated time remaining
-* [ ] **Keyboard shortcuts** for start/stop
-* [ ] **Better UI/UX**
+* Some likes may require manual retry depending on scroll and render timing.
+* If you see odd behavior, try a lower batch size or enable `Respect Rate Limit`.
+
 ---
 
-## Contributing
+## 🗜️ Roadmap
 
-1. Fork the repo and create a branch: `git checkout -b feature/my‑awesome‑feature`
-2. Commit your changes: `git commit -m "feat: add my awesome feature"`
-3. Push to your branch: `git push origin feature/my‑awesome‑feature`
-4. Open a Pull Request and describe your changes.
+* [ ] Chrome Web Store publishing
+* [ ] Edge/Opera store listings
+* [ ] Dark/Light theme toggle
+* [ ] Keyboard shortcuts (start/stop)
+* [ ] Visual refresh: minimal flat icons & UI transitions
 
-Please follow the **Conventional Commits** format and update the README accordingly.
+---
+
+## 🙌 Contributing
+
+1. Fork and branch: `git checkout -b feat/cool-feature`
+2. Commit using [Conventional Commits](https://www.conventionalcommits.org/)
+3. Push: `git push origin feat/cool-feature`
+4. Open a PR describing your changes
 
 ---
 
