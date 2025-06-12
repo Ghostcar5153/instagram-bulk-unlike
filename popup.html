@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,3 +140,161 @@
   <script src="content.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Bulk Unlike</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="main-content">
+    <!-- Header -->
+    <header class="header">
+      <h2><span class="icon">📸</span> Bulk Unlike</h2>
+      <button id="open-settings" class="settings-btn" aria-label="Settings">⚙️</button>
+    </header>
+
+    <!-- Connection Status -->
+    <div class="connection-status">
+      <div class="status-dot" id="connection-dot"></div>
+      <span id="connection-text">Connected to Instagram</span>
+    </div>
+
+    <!-- Wrong Page State -->
+    <div id="wrong-page-state" class="state">
+      <div class="icon">🔍</div>
+      <h3>Navigate to Instagram Likes</h3>
+      <p>To use this extension, you need to navigate to your Instagram Likes page first.</p>
+      <button id="navigate-btn" class="btn btn-primary">Go to Likes Page</button>
+    </div>
+
+    <!-- Correct Page State -->
+    <div id="correct-page-state" class="state">
+      <div class="dashboard">
+        <!-- Status Card -->
+        <div id="status-card" class="status-card">
+          <div id="status-text" class="status-text">Ready to start</div>
+          <div id="status-subtitle" class="status-subtitle">Click start to begin bulk unliking</div>
+        </div>
+
+        <!-- Progress Stats -->
+        <div class="progress-stats">
+          <div class="stat-card">
+            <div id="cycles-count" class="stat-value">0</div>
+            <div class="stat-label">Cycles</div>
+          </div>
+          <div class="stat-card">
+            <div id="processed-count" class="stat-value">0</div>
+            <div class="stat-label">Processed</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button id="start-btn" class="btn btn-primary">
+            <span>▶️</span> Start
+          </button>
+          <button id="stop-btn" class="btn btn-secondary" disabled>
+            <span>⏸️</span> Stop
+          </button>
+        </div>
+
+        <!-- Current Action -->
+        <div id="current-action" class="current-action">
+          Waiting for action...
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>⚙️ Settings</h3>
+          <button id="close-settings" class="close-btn">✕</button>
+        </div>
+        <div class="modal-body">
+          <!-- Presets -->
+          <div class="form-section">
+            <h4>Quick Presets</h4>
+            <div class="preset-grid">
+              <button class="preset-btn" data-preset="conservative">🐌 Conservative</button>
+              <button class="preset-btn active" data-preset="balanced">⚖️ Balanced</button>
+              <button class="preset-btn" data-preset="aggressive">⚡ Aggressive</button>
+            </div>
+          </div>
+
+          <!-- Batch Settings -->
+          <div class="form-section">
+            <h4>Batch Configuration</h4>
+            <div class="form-group">
+              <label for="batch-size">Items per cycle</label>
+              <input type="number" id="batch-size" min="1" max="100" value="50">
+            </div>
+          </div>
+
+          <!-- Timing Settings -->
+          <div class="form-section">
+            <h4>Timing Settings (milliseconds)</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="between-clicks">Between clicks</label>
+                <input type="number" id="between-clicks" min="50" max="5000" value="100">
+              </div>
+              <div class="form-group">
+                <label for="after-select">After select</label>
+                <input type="number" id="after-select" min="200" max="10000" value="500">
+              </div>
+              <div class="form-group">
+                <label for="after-unlike">After unlike</label>
+                <input type="number" id="after-unlike" min="500" max="10000" value="1000">
+              </div>
+              <div class="form-group">
+                <label for="reload-wait">Before reload</label>
+                <input type="number" id="reload-wait" min="500" max="10000" value="1000">
+              </div>
+              <div class="form-group">
+                <label for="resume-delay">Resume delay</label>
+                <input type="number" id="resume-delay" min="3000" max="30000" value="5000">
+              </div>
+              <div class="form-group">
+                <label for="max-retries">Max retries</label>
+                <input type="number" id="max-retries" min="1" max="10" value="3">
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety Settings -->
+          <div class="form-section">
+            <h4>Safety Options</h4>
+            <div class="checkbox-group">
+              <input type="checkbox" id="respect-rate-limit" checked>
+              <label for="respect-rate-limit">Respect rate limits</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="auto-retry" checked>
+              <label for="auto-retry">Auto-retry on errors</label>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+            <button id="save-settings" class="btn btn-primary">💾 Save</button>
+            <button id="reset-settings" class="btn btn-secondary">🔄 Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+  </div>
+
+  <script src="popup.js"></script>
+  <script src="config.js"></script>
+  <script src="content.js"></script>
+</body>
+</html>
+>>>>>>> 6c238ae (Huge update to  UI and fix unlike selection bugs)
