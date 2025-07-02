@@ -19,7 +19,7 @@
    - Click **Load unpacked**
    - Select the `instagram-bulk-unlike` folder
 
-**(If you downloaded the [chrome extension]((https://chromewebstore.google.com/detail/instagram-bulk-unlike/cebcpbhkblcbdbblgpaelhfoldffenlj)) you can skip steps 1 & 2)**
+**(If you downloaded the [chrome extension](https://chromewebstore.google.com/detail/instagram-bulk-unlike/cebcpbhkblcbdbblgpaelhfoldffenlj) you can skip steps 1 & 2)**
 
 3. **Open Instagram Likes Page**
    - Go to: `https://www.instagram.com/your_activity/interactions/likes/`
