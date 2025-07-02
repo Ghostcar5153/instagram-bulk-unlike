@@ -1,125 +1,104 @@
 # Instagram Bulk Unlike
 
-> 🔧 A lightweight Chrome/Brave extension to bulk‑unlike Instagram posts from your Likes page.
+> 🔧 A clean, simple Chrome/Brave extension to bulk-unlike Instagram posts from your Likes page.
+
+[🧩 Get the Extension on the Chrome Web Store →](https://chromewebstore.google.com/detail/instagram-bulk-unlike/cebcpbhkblcbdbblgpaelhfoldffenlj)
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Locally)
 
-1. **Clone the repo**
-
+1. **Clone the Repo**
    ```bash
    git clone https://github.com/Ghostcar5153/instagram-bulk-unlike.git
    ```
 
-2. **Load as an unpacked extension**
+2. **Load the Extension**
+   - Visit `chrome://extensions/` or `brave://extensions`
+   - Enable **Developer Mode**
+   - Click **Load unpacked**
+   - Select the `instagram-bulk-unlike` folder
 
-   * Go to `chrome://extensions` or `brave://extensions`
-   * Enable **Developer mode** (top-right switch)
-   * Click **Load unpacked** and select the `instagram-bulk-unlike` folder
+**(If you downloaded the [chrome extension]((https://chromewebstore.google.com/detail/instagram-bulk-unlike/cebcpbhkblcbdbblgpaelhfoldffenlj)) you can skip steps 1 & 2)**
 
-3. **Open your Instagram Likes**
-
-   * Navigate to: `https://www.instagram.com/your_activity/interactions/likes/`
-   * Click the extension icon 🧩, then hit ⚙️ to configure and start
+3. **Open Instagram Likes Page**
+   - Go to: `https://www.instagram.com/your_activity/interactions/likes/`
+   - Click the extension icon 🧩
+   - Tap ⚙️ to configure settings and start unliking
 
 ---
 
 ## 🎯 Features
 
-* **Bulk Unlike**: Automatically removes likes from hundreds of posts
-* **Real-time Dashboard**: Live tracking of cycles, actions, and processing status
-* **Presets**: Choose between **Conservative**, **Balanced**, or **Aggressive** configurations
-* **Custom Delays**: Full control over timing for each stage (clicks, reloads, retries)
-* **Rate Limiting & Retry Logic**: Avoids bans and retries intelligently
-* **Settings Modal**: Modern, responsive modal for configuration
-* **Import/Export**: Easily back up and restore your settings as JSON
-* **New UI**: Completely redesigned, clean and responsive layout with feedback and status indicators
+- ⚙️ **Custom Delays & Presets** – Conservative, Balanced, Aggressive modes or full manual control
+- 🖥️ **Live Dashboard** – Realtime feedback: current action, cycles, progress
+- 🔄 **Retry System** – Auto-retry failed actions with safety logic
+- 🧠 **Rate Limiting Support** – Avoid bans by simulating human behavior
+- 💾 **Import/Export Settings** – Easily backup or share your configuration
+- 🧼 **Modern UI** – Dark-themed, responsive popup with status indicators
+- 🔘 **One‑Click Control** – Start, stop, and reset your progress any time
 
 ---
 
 ## 💽 Supported Browsers
 
-* Chrome (v90+)
-* Brave
-* Edge (Chromium)
-* Opera
+- Chrome (v90+) (Tested)
+- Brave (Tested)
+### Browsers that should work but i have not tried
+- Microsoft Edge (Chromium)
+- Opera
 
 ---
 
 ## ⚙️ Configuration Settings
 
 | Setting            | Description                                | Default |
-| ------------------ | ------------------------------------------ | ------- |
-| **Items / cycle**  | Posts unliked per batch                    | `50`    |
-| **Between clicks** | Delay between unlike clicks (ms)           | `100`   |
-| **After select**   | Wait after selecting a post (ms)           | `500`   |
-| **After unlike**   | Wait after unliking a post (ms)            | `1000`  |
-| **Reload wait**    | Wait after reloading Likes page (ms)       | `1000`  |
-| **Resume delay**   | Wait before starting a new cycle (ms)      | `5000`  |
-| **Rate limit**     | Enables safety for Instagram limits        | ✔️      |
-| **Auto-retry**     | Automatically retries failed actions       | ✔️      |
-| **Max retries**    | Number of retry attempts per failed action | `3`     |
+|--------------------|--------------------------------------------|---------|
+| **Items / Cycle**  | How many posts to process in one batch     | `50`    |
+| **Between Clicks** | Delay between post interactions (ms)       | `100`   |
+| **After Select**   | Wait after selecting a post (ms)           | `500`   |
+| **After Unlike**   | Delay after clicking "Unlike" (ms)         | `1000`  |
+| **Reload Wait**    | Delay before reloading the Likes page (ms) | `1000`  |
+| **Resume Delay**   | Wait time before starting next cycle (ms)  | `5000`  |
+| **Rate Limit**     | Enables Instagram-safe mode                | ✅       |
+| **Auto-Retry**     | Retries failed attempts automatically      | ✅       |
+| **Max Retries**    | Maximum retries per failed item            | `3`     |
 
 ---
 
 ## 🔄 How It Works
 
-By default, the extension:
-
-1. Selects a batch of posts (based on the configured **Items / cycle**, default and recommended by me: 50).
-2. Unlikes each post with the specified delays between actions.
-3. Reloads the Likes page after processing the batch.
-4. Waits for the configured **Resume delay** (default: `5000 ms`).
-5. Repeats automatically until all posts are processed or you stop it.
+1. Extension checks if you're on your Instagram Likes page.
+2. On start, it selects a batch of posts and begins unliking with delays.
+3. Reloads the page and repeats until complete or stopped.
+4. All actions are tracked with live status and can be paused or reset.
 
 ---
 
-## 📸 Using It
+## 🛠️ Known Issues
 
-1. Go to your **Instagram Likes** page
-2. Open the extension 🧩 and click **Start**
-3. View the live status including:
-
-   * **Current Action**
-   * **Cycle Count**
-   * **Processed Posts**
-4. Click **Stop** at any time
-5. Use ⚙️ to tweak presets or delays
-6. Use ⬆️ Export and ⬇️ Import buttons to save/share config
-
----
-
-## 🛠️ Known Bugs / Notes
-
-* Some likes may require manual retry depending on scroll and render timing.
-* If you see odd behavior, try a lower batch size or enable `Respect Rate Limit`.
-
----
-
-## 🗜️ Roadmap
-
-* [ ] Chrome Web Store publishing
-* [ ] Edge/Opera store listings
-* [ ] Dark/Light theme toggle
-* [ ] Keyboard shortcuts (start/stop)
-* [ ] Visual refresh: minimal flat icons & UI transitions
+- Some items may not be selected due to dynamic loading delays.
+- If issues occur, try reducing batch size or increasing delays.
+- There may be the very slight possibility of 1 or 2 ghost posts, due to an account going from public to private
 
 ---
 
 ## 🙌 Contributing
 
-1. Fork and branch: `git checkout -b feat/cool-feature`
-2. Commit using [Conventional Commits](https://www.conventionalcommits.org/)
-3. Push: `git push origin feat/cool-feature`
-4. Open a PR describing your changes
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feat/my-feature`
+3. Follow [Conventional Commits](https://www.conventionalcommits.org/)
+4. Open a pull request with your changes
 
 ---
 
 ## ⚠️ Disclaimer
 
-This extension automates the process of unliking posts on Instagram. Use responsibly—excessive or improper use may trigger Instagram's rate limits or temporary account restrictions. The author is not responsible for any misuse of this tool.
+This tool automates Instagram interactions. Use responsibly—Instagram may rate-limit or restrict your account for excessive activity. The author is not responsible for any resulting account issues or penalties.
+
+---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+Licensed under the MIT License.  
+See the [LICENSE](./LICENSE) file for full details.
